@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Parisienne&display=swap');
+
+.titulo{
+  font-family: 'Parisienne', cursive; 
+  font-size: 5rem;
+}
+button{
+    background-color: #F8F9FA;
+    border: 10px;
+}

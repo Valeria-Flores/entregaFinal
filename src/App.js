@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/navBar/NavBar';
+import { useState } from 'react';  
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import CartWidget from './components/cart/CartWidget';
+
 
 function App() {
+  const [contador, setContador]=useState(0)
+
+
+function sumaConEstado(){
+  setContador(contador+1)
+}
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div>
+      <NavBar />
+      </div>
+      <ItemListContainer greeting='Bienvenidos a Atelier de ideas' />
+      <br/>
     </div>
+    
   );
 }
 

@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Parisienne&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+
 }
 
 .App-logo {
