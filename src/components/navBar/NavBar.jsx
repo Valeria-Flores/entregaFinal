@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "../cart/CartWidget";
 import { useState } from 'react';  
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar =() =>{
     const [contador, setContador]=useState(0)
@@ -17,19 +18,26 @@ const NavBar =() =>{
     return(
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home" className="titulo">Atelier de ideas</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/" className="titulo">
+          Atelier de ideas
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Catalogo</Nav.Link>
-            <NavDropdown title="Sobre nosotros" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Nuestra historia</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Contactanos
+            <NavDropdown title="Catalogo" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+                <NavLink to={`/category/mesas`} className={({isActive})=> isActive ? "ActiveOption":"Option"}>Mesas</NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Cotización
+              <NavDropdown.Item className="link">
+                <NavLink to={`/category/dormitorio`} className={({isActive})=> isActive ? "ActiveOption":"Option"}>Dormitorio</NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink to={`/category/sillas`} className={({isActive})=> isActive ? "ActiveOption":"Option"}>Sillas</NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink to={`/category/almacenamiento`} className={({isActive})=> isActive ? "ActiveOption":"Option"}>Almacenamiento</NavLink>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

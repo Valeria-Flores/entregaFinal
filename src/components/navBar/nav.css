@@ -2,9 +2,15 @@
 
 .titulo{
   font-family: 'Parisienne', cursive; 
-  font-size: 5rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
 }
 button{
     background-color: #F8F9FA;
     border: 10px;
+}
+#link{
+  text-decoration: none;
+  color: black;
 }
