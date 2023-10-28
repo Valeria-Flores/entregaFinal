@@ -1,7 +1,22 @@
+import { useContext, useState } from "react"
 import Count from "../counter/Count"
+import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
+
 
 export const ItemDetail = ({ id, nombre, categoria, descripcion,precio, imagen, stock }) => {
+    const [quantityAdded, setQuantityAdded] = useState(0);
 
+    const {addItem} = useContext(CartContext)
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+        const item = {
+            id, nombre, precio
+        }
+        addItem(item, quantity)
+    }
+    
     return (
             <article>
                 <picture>
@@ -13,17 +28,28 @@ export const ItemDetail = ({ id, nombre, categoria, descripcion,precio, imagen, 
                     </h3>
                 </header>
                 <section>
-                    <p className="desItem">
-                        {descripcion}
-                    </p>
-                    <p className="desItem">
-                        Precio: {precio}
-                    </p>
-                    <p className="desItem">
-                        Stock disponible: {stock}
-                    </p>
+                <p className="desItem">
+                    {descripcion}
+                <br />
+                    Precio: {precio}
+                <br />
+                    Stock disponible: {stock}
+                </p>
+
                 </section>
-                <Count inicial={1} stock={10} add={(cantidad)=> console.log("Añadido al carrito",cantidad)}></Count>
+                <footer>
+                    {
+                        quantityAdded > 0 ?(
+                            <Link to='/cart' className="option">Terminar con la compra</Link>
+                        ):(
+                            <Count inicial={1} stock={10} add={handleOnAdd}></Count>
+                        )
+                    }
+                </footer>
             </article>
     )
 }
+
+export default ItemDetail
+
+//<Count inicial={1} stock={10} add={(cantidad)=> console.log("Añadido al carrito",cantidad)}></Count>
