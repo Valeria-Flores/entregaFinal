@@ -1,6 +1,5 @@
-const productos = [
+export const productos = [
     {
-        id:"1",
         nombre:"Mesa de comedor",
         categoria: "mesas",
         descripcion:"Mesa de comedor de elegante y robusta, con un acabado en madera que le brinda calidez y versatilidad para adaptarse a cualquier estilo de decoración.",
@@ -10,7 +9,6 @@ const productos = [
 
     },
     {
-        id:"2",
         nombre:"Escritorio",
         categoria:"mesas",
         descripcion:"El escritorio blanco presenta líneas limpias y modernas, con amplio espacio de trabajo, compartimentos de almacenamiento integrados y una superficie resistente, perfecto para crear un ambiente funcional y organizado en cualquier oficina o estudio.",
@@ -19,7 +17,6 @@ const productos = [
         stock:10
     },
     {
-        id:"3",
         nombre:"Cama individual",
         categoria:"dormitorio",
         descripcion:"La base de cama individual ofrece un diseño contemporáneo y elegante, con una estructura sólida y resistente que brinda soporte óptimo, mientras que su tono neutro se adapta fácilmente a cualquier estilo de dormitorio.",
@@ -28,7 +25,6 @@ const productos = [
         stock:10
     },
     {
-        id:"4",
         nombre:"Cama matrimonial",
         categoria:"dormitorio",
         descripcion:"La base de cama matrimonial combina funcionalidad y estilo, con un diseño moderno, una estructura robusta y un tono suave que aporta luminosidad y tranquilidad al espacio de descanso.",
@@ -37,7 +33,6 @@ const productos = [
         stock:10
     },
     {
-        id:"5",
         nombre:"Set de sillas",
         categoria:"sillas",
         descripcion:"El set de 4 sillas blancas para comedor combina un diseño moderno y minimalista con la comodidad y durabilidad de su estructura ergonómica, brindando un toque de elegancia y luminosidad a cualquier espacio.",
@@ -46,7 +41,6 @@ const productos = [
         stock:10
     },
     {
-        id:"6",
         nombre:"Set de bancos",
         categoria:"sillas",
         descripcion:"El set de 4 bancos cuenta con un diseño moderno y minimalista, asientos cómodos y una estructura duradera, ofreciendo una solución versátil y elegante para completar el mobiliario de cualquier bar o cocina.",
@@ -55,16 +49,6 @@ const productos = [
         stock:10
     },
     {
-        id:"7",
-        nombre:"Librero",
-        categoria: "almacenamiento",
-        descripcion:"El librero blanco presenta un diseño contemporáneo y funcional, con estantes ajustables para adaptarse a diferentes tamaños de libros y objetos decorativos, brindando organización y estilo a cualquier espacio de almacenamiento.",
-        precio:4800,
-        imagen:"/assets/librero.webp",
-        stock:10
-    },
-    {
-        id:"8",
         nombre:"Buró",
         categoria:"almacenamiento",
         descripcion:"El buró combina belleza y funcionalidad con su diseño elegante y acabado en madera, ofreciendo espacio de almacenamiento con cajones espaciosos y una superficie resistente, ideal para complementar cualquier dormitorio con estilo y practicidad.",
@@ -73,7 +57,6 @@ const productos = [
         stock:10
     },
     {
-        id:"9",
         nombre:"Armario",
         categoria:"almacenamiento",
         descripcion:"El armario blanco presenta un diseño clásico y atemporal, con amplio espacio de almacenamiento, estantes ajustables y un elegante acabado en blanco que se adapta a cualquier estilo de decoración, proporcionando organización y estilo a cualquier habitación.",
@@ -94,7 +77,7 @@ export const getProductos = () => {
 export const getProductosbyId=(productId)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            resolve(productos.find(prod => prod.id == productId))
+            resolve(productos.find(prod => prod.id === productId))
         },500)
     })
 }

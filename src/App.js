@@ -1,15 +1,23 @@
 import './App.css';
 import NavBar from './components/navBar/NavBar';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import { useState } from 'react';  
+import { useEffect, useState } from 'react';  
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import Count from "./components/counter/Count"
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/cart/Cart';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from './services/firebase';
+import { productos } from './muebles';
 
 function App() {
+  useEffect(()=>{
+    const coleccionProductos = collection(db,"productos")
+    productos.map((item)=> addDoc(coleccionProductos,item))
+  },[])
+
   return (
     <div className='App'>
       <BrowserRouter>
@@ -20,6 +28,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
             <Route path='/item/:itemId' element={<ItemDetailContainer/>}></Route>
             <Route path='/cart' element={<Cart></Cart>}></Route>
+            
             <Route path='*' element={<h3>404 NOT FOUND</h3>}></Route>
           </Routes>
         </CartProvider> 
