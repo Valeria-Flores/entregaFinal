@@ -1,4 +1,41 @@
 export const productos = [
+]
+
+export const getProductos = () => {
+    return new Promise((resolve) => {
+        setTimeout(()=>{
+            resolve(productos)
+        },500)
+    })
+}
+
+export const getProductosbyId=(productId)=>{
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(productos.find(prod => prod.id === productId))
+        },500)
+    })
+}
+
+export const getProductosbyCategoria=(categoryId)=>{
+    return new Promise((resolve, reject)=>{
+        const filteredProducts = productos.filter((prod) => prod.categoria === categoryId);
+        if (filteredProducts.length > 0) {
+            resolve(filteredProducts);
+        } else {
+            reject("No se encontraron productos en la categoría especificada.");
+        }
+    })
+}
+
+/**
+ setTimeout(()=>{
+            resolve(productos.filter(prod => prod.categoria == productCategory))
+        }, 500
+        )
+
+
+export const productos = [
     {
         nombre:"Mesa de comedor",
         categoria: "mesas",
@@ -64,38 +101,5 @@ export const productos = [
         imagen:"/assets/armario.webp",
         stock:10
     }
-]
-
-export const getProductos = () => {
-    return new Promise((resolve) => {
-        setTimeout(()=>{
-            resolve(productos)
-        },500)
-    })
-}
-
-export const getProductosbyId=(productId)=>{
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            resolve(productos.find(prod => prod.id === productId))
-        },500)
-    })
-}
-
-export const getProductosbyCategoria=(categoryId)=>{
-    return new Promise((resolve, reject)=>{
-        const filteredProducts = productos.filter((prod) => prod.categoria === categoryId);
-        if (filteredProducts.length > 0) {
-            resolve(filteredProducts);
-        } else {
-            reject("No se encontraron productos en la categoría especificada.");
-        }
-    })
-}
-
-/**
- setTimeout(()=>{
-            resolve(productos.filter(prod => prod.categoria == productCategory))
-        }, 500
-        )
+]        
  */

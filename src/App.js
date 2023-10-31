@@ -11,6 +11,7 @@ import Cart from './components/cart/Cart';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from './services/firebase';
 import { productos } from './muebles';
+import Checkout from './components/checkout/Checkout';
 
 function App() {
   useEffect(()=>{
@@ -28,7 +29,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
             <Route path='/item/:itemId' element={<ItemDetailContainer/>}></Route>
             <Route path='/cart' element={<Cart></Cart>}></Route>
-            
+            <Route path='/checkout' element={<Checkout></Checkout>}></Route>
             <Route path='*' element={<h3>404 NOT FOUND</h3>}></Route>
           </Routes>
         </CartProvider> 
