@@ -7,6 +7,8 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../../services/firebase";
+import "./checkout.css"
+
 
 const Checkout = () => {
   const [user, setUser] = useState({});
@@ -44,7 +46,7 @@ const Checkout = () => {
   };
 
   return (
-    <div>
+    <div className="containerCheckout">
       {orderId !== ''
         ?<div>
             <h4>Su orden fue generada con éxito</h4>
@@ -52,8 +54,8 @@ const Checkout = () => {
         </div>
         :<div>
             <h3>Terminar compra</h3>
-            <h5>Completar el formulario con sus datos</h5>
-            <form onSubmit={finalizarCompra}>
+            <p>Favor de completar el formulario con sus datos</p>
+            <form onSubmit={finalizarCompra} className="leftCheckout">
                 <div className="mb-3">
                 <label className="form-label">Nombre completo</label>
                 <input
@@ -95,7 +97,7 @@ const Checkout = () => {
                 />
                 </div>
                 <button
-                className="btn"
+                className="orderButton"
                 type="submit"
                 disabled={
                     !user.name || !user.phone || !user.mail || user.mail !== validateEmail

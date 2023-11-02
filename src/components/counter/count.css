@@ -1,0 +1,22 @@
+.controles{
+    font-size: 1.5rem;
+}
+.btnControl{
+    border-color: #b8b09c;
+    border-width: 0.5px;
+    border-radius: 20px;
+    border-style: solid;
+    background-color: #fff;
+    color:#b8b09c;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+button.btnControl:hover{
+    background-color: #b8b09c;
+    border-radius: 20px;
+    color: #fff;
+    border-color: #b8b09c;
+    border-width: 0.5px;
+    border-style: solid;
+}

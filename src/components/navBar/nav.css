@@ -10,7 +10,7 @@ button{
     background-color: #F8F9FA;
     border: 10px;
 }
-#link{
+.Option, .ActiveOption{
   text-decoration: none;
   color: black;
 }

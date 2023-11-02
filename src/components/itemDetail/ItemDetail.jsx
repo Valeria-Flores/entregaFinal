@@ -13,7 +13,7 @@ export const ItemDetail = ({ id, nombre, categoria, descripcion,precio, imagen, 
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
         const item = {
-            id, nombre, precio
+            id, nombre, precio, imagen
         }
         addItem(item, quantity)
     }
@@ -27,24 +27,24 @@ export const ItemDetail = ({ id, nombre, categoria, descripcion,precio, imagen, 
                         </Col>
                         <Col className="itemContainer">
                         <header className="header">
-                            <h3 className="itemHeader">
+                            <h3 className="leftAlign">
                                 {nombre}
                             </h3>
                         </header>
                         <section>
-                        <p className="desItem">
+                        <p className="leftAlign">
                             {descripcion}
                         <br />
-                            Precio: {precio}
+                            <b>Precio: </b>${precio}
                         <br />
-                            Stock disponible: {stock}
+                            <b>Stock disponible: </b>{stock}
                         </p>
 
                         </section>
                         <footer>
                             {
                                 quantityAdded > 0 ?(
-                                    <Link to='/cart' className="option">Terminar con la compra</Link>
+                                    <Link to='/cart' className="terminarCompra">Terminar con la compra</Link>
                                 ):(
                                     <Count inicial={1} stock={10} add={handleOnAdd}></Count>
                                 )
@@ -53,6 +53,15 @@ export const ItemDetail = ({ id, nombre, categoria, descripcion,precio, imagen, 
                         </Col>
                     </Row>
                 </Container>
+
+            </article>
+    )
+}
+
+export default ItemDetail
+
+//<Count inicial={1} stock={10} add={(cantidad)=> console.log("Añadido al carrito",cantidad)}></Count>
+/*
                 <picture className="md-4">
                     <img src={imagen} alt={nombre} className="itemImg"></img>
                 </picture>
@@ -80,10 +89,4 @@ export const ItemDetail = ({ id, nombre, categoria, descripcion,precio, imagen, 
                         )
                     }
                 </footer>
-            </article>
-    )
-}
-
-export default ItemDetail
-
-//<Count inicial={1} stock={10} add={(cantidad)=> console.log("Añadido al carrito",cantidad)}></Count>
+*/

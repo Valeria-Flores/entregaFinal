@@ -1,3 +1,29 @@
 .itemContainer{
     justify-content: center;
+    
+}
+.leftAlign{
+    text-align: left;
+}
+.terminarCompra{
+    background-color: #b8b09c;
+    border-radius: 20px;
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    border-color: #b8b09c;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+    color: #fff;
+}
+.terminarCompra:hover{
+    border-color: #b8b09c;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #fff;
+    color:#b8b09c;
 }

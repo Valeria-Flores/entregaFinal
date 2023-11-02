@@ -1,0 +1,44 @@
+.itemCarrito{
+    border-color: #E7EBEB;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    justify-content: center;
+}
+.imageCart{
+    height: 150px;
+}
+.textLeft{
+    text-align: left;
+}
+.textRight{
+    text-align: right;
+
+}
+.deleteButton{
+    background-color: #DAB2AB;
+    border-radius: 20px;
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 30px;
+    border-color: #DAB2AB;
+    border-style: solid;
+    border-width: 1px;
+}
+.itemCarrito .deleteButton:hover{
+    border-color: #DAB2AB;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #fff;
+    color:#DAB2AB;
+}
+.textLink{
+    text-decoration: none;
+    color: #fff;
+}
+.textLink:hover{
+    color: #b8b09c;
+}

@@ -20,14 +20,11 @@ const Count = ( {stock, inicial, add}) =>{
     console.log(cantidad)
     return(
         <div className="contador">
-            <div className="controles">
-                <button className="boton" onClick={decremento}>-</button>
-                <h4>{cantidad}</h4>
-                
-                <button className="boton" onClick={incremento}>+</button>
+            <div className="controles"> 
+                <button className="btnControl" onClick={decremento}>-</button> <text className="numContador">{cantidad} </text><button className="btnControl" onClick={incremento}>+</button>
             </div>
             <div>
-                <button className="boton" onClick={()=> add(cantidad)} disabled={!stock}>Añadir al carrito</button>
+                <button className="option" onClick={()=> add(cantidad)} disabled={!stock}>Añadir al carrito</button>
             </div>
 
         </div>

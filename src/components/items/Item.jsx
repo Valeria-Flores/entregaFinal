@@ -15,7 +15,7 @@ export const Item = ({ id, nombre, categoria, descripcion,precio, imagen, stock 
                             {nombre}
                         </Card.Title>
                         <Card.Text>
-                            Precio: {precio}
+                            Precio: ${precio}
                             <br />
                             Stock disponible: {stock}
                         </Card.Text>
@@ -51,6 +51,6 @@ export default Item
                     </p>
                 </section>
                 <footer className="fItem">
-                    <Link to={`/item/${id}`} className="option">Ver más</Link>
+                    <Link to={`/item/${id}`} className="s">Ver más</Link>
                 </footer>
 */
