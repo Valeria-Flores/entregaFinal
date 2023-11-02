@@ -14,7 +14,7 @@ const NavBar =() =>{
       <Container>
         <Navbar.Brand>
           <Link to="/" className="titulo">
-          Atelier de ideas
+          Taller de ideas
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
